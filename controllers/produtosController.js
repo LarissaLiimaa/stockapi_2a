@@ -1,6 +1,5 @@
 import * as service from '../services/produtosService.js';
 
-//Função para criar um novo produto - chama a função criar do service
 export async function criar(req, res, next) {
     try {
         const id = await service.criar(req.body)
@@ -10,7 +9,6 @@ export async function criar(req, res, next) {
     }
 }
 
-//Função para listar todos os produtos
 export async function listar(req, res, next) {
     try {
         const produtos = await service.listar();
@@ -20,7 +18,6 @@ export async function listar(req, res, next) {
     }
 }
 
-//Função para buscar produto pelo ID
 export async function buscarPorId(req, res, next) {
     try {
         const { id } = req.params;
@@ -35,7 +32,6 @@ export async function buscarPorId(req, res, next) {
 
 }
 
-//Função para atualizar os dados de um produto
 export async function atualizar(req, res, next) {
     try {
         const { id } = req.params;
@@ -52,7 +48,6 @@ export async function atualizar(req, res, next) {
     }
 }
 
-//Função para excluir um produto
 export async function deletar(req, res, next) {
     try {
         const [id] = req.params;
